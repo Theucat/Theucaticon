@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_one">
+
+    <include layout="@layout/item_bar"
+             android:id="@+id/rl_bar"/>
+
+    <LinearLayout
+        android:id="@+id/ll_resy"
+        android:layout_below="@+id/rl_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+            <com.zxzq.car.view.FontTextView
+                android:id="@+id/tv_site"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="起始站-终点站"
+                app:font_path="font/ssssss.ttf"/>
+            <ImageButton
+                android:background="@color/nocolor"
+                android:id="@+id/iv_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/recycle"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+        </RelativeLayout>
+        <com.zxzq.car.view.FontTextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时间"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            app:font_path="font/ssssss.ttf"/>
+    </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_site"
+            android:layout_below="@+id/ll_resy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:visibility="visible"/>
+
+    <RelativeLayout
+        android:layout_below="@+id/rl_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_sorry"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/sorry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"/>
+        <com.zxzq.car.view.FontTextView
+            android:layout_below="@+id/iv_sorry"
+            android:id="@+id/tv_sorry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="很抱歉，未找到结果，请换个试试"
+            app:font_path="font/ssssss.ttf"
+            android:textSize="20dp"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+</RelativeLayout>
